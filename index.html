@@ -7,84 +7,38 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <script src="./script.js"></script>
     <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    
     <title>Messages</title>
 </head>
 <body>
-
-    <div class="caja-login">
-
-            <div class="limite-superior">
-
-                <div class="titulometa">
-                    <h2>Login / Register</h2>
-                </div>
-
-                <div class="inputs">
-                    <input type="text" id="input1" placeholder="Email / Phone Num.">
-                    <input type="text" id="input2" placeholder="password">
-                </div>
-
-
-            </div>
-
-            <div class="limite-inferior">
-
-                <button class="boton" id="login" onclick="login()">Login</button>
-                <button class="boton" id="register" onclick="registro()">register</button>
-
-            </div>
-
+    <div>
+        <ion-header>
+        <ion-toolbar>
+        <ion-title>Presupuesto</ion-title>
+        </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+        <h1>Content</h1>
+        </ion-content>
     </div>
 
-    <div class="mensaje" id="mensaje"></div>
+      <div>
+        <ion-list>
+        <ion-item>
+        <ion-input label="Articulo:" id="Articulo" placeholder="Ingrese nombre del Articulo"></ion-input>
+        </ion-item>
 
-    <div class="mensaje" id="mensajeError"></div>
+        <ion-item>
+        <ion-input label="Monto:" id="monto" placeholder="Ingrese monto"></ion-input>
+        </ion-item>
+      </div>
 
-    <script>
-        function login() {
-    var mensaje = document.getElementById("mensaje");
-    var input1 = document.getElementById("input1").value;
-    var input2 = document.getElementById("input2").value;
-
-    if (input1 === '' || input2 === '') {
-        var mensajeError = document.getElementById("mensajeError");
-        mensajeError.innerHTML = "Por favor, complete todos los campos.";
-        mensajeError.style.display = "block";
-        setTimeout(function() {
-            mensajeError.style.display = "none";
-        }, 5000); // 5000 milisegundos = 5 segundos
-    } else {
-        mensaje.innerHTML = "Login correcto";
-        mensaje.style.display = "block";
-        setTimeout(function() {
-            mensaje.style.display = "none";
-        }, 5000); // 5000 milisegundos = 5 segundos
-    }
-}
-
-
-function registro() {
-    var mensaje = document.getElementById("mensaje");
-    var mensajeError = document.getElementById("mensajeError");
-    var input1 = document.getElementById("input1").value;
-    var input2 = document.getElementById("input2").value;
-
-    if (input1 === '' || input2 === '') {
-        mensajeError.innerHTML = "Por favor, complete todos los campos.";
-        mensajeError.style.display = "block";
-        setTimeout(function() {
-            mensajeError.style.display = "none";
-        }, 5000); // 5000 milisegundos = 5 segundos
-    } else {
-        mensaje.innerHTML = "Registrado correctamente. Usuario: " + input1;
-        mensaje.style.display = "block";
-        setTimeout(function() {
-            mensaje.style.display = "none";
-        }, 5000); // 5000 milisegundos = 5 segundos
-    }
-}
-
-    </script>
+      <div>
+        <ion-button>Guardar</ion-button>
+      </div>
     
 </body>
 </html>
